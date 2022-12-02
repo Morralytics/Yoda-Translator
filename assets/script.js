@@ -17,6 +17,8 @@ fetch(
       response.json().then(function (data) {
         console.log(data);
         console.log(data.value);
+        var input = data.value;
+        yodaTranslate(input);
       });
     } else {
       alert("Error: " + response.statusText);
@@ -25,3 +27,21 @@ fetch(
   .catch(function (error) {
     alert("Unable to connect to API");
   });
+var yodaTranslate = function (input) {
+  var yoda =
+    "https://api.funtranslations.com/translate/yoda.json?text=" + input + ".";
+  fetch(yoda)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert("Error: " + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert("Unable to connect to API");
+    });
+};

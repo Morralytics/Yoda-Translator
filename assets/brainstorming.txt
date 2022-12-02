@@ -21,3 +21,4 @@ Dropdown bar is lightsaber, submit button is hilt
 on submit, lightsaber sound
 Font is Star Wars font
 separate quote screen after submit? (window.location to new page, with breadcrumb or something to link back to index)
+Look into dropdown icon 

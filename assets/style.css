@@ -1,23 +1,5 @@
-/* 
 
-"sticky" header/banner welcoming user 
-background of which, image or something appropriate to theme
-
-main background area: Star Wars galaxy map
-
-Quote area at top
-Click dropdown (x2 or more variables)
-Generate button attached to bar
-Yoda picture will appear beneath once quote generated
-(will need to collect gallery of yoda pictures, randomize)
-
-Glow effect on things
-
-
-Wishlist items:
-Dropdown bar is lightsaber, submit button is hilt
-on submit, lightsaber sound
-Font is Star Wars font
-separate quote screen after submit? (window.location to new page, with breadcrumb or something to link back to index)
-
-*/
+.fa-angle-down:before {
+    /* Look into icon */
+    content: "\2193";
+}

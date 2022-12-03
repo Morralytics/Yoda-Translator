@@ -8,3 +8,7 @@ footer {
     bottom: 0;
     min-width: 100%;
 }
+
+.custom-dropdown-menu {
+    position: absolute;
+}

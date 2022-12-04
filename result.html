@@ -7,13 +7,16 @@
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style-2.css" />
     <title>Your Translated Quote</title>
 </head>
 
 <body>
-    <header></header>
-    <main id="pg2-container" class="container is-fluid is-justify-content-center">
+    <!-- <header></header> -->
+    <main>
         <div class="block">
             <section id="pg2-hero" class="hero is-info">
                 <div id="pg2-hero-body" class="hero-body">
@@ -21,16 +24,25 @@
                     <p class="subtitle"></p>
                 </div>
             </section>
-            <div id="pg2-quote-container" class="box is-flex is-justify-content-center">
+        </div>
+
+        <div class="block">
+            <div id="pg2-quote-container" class="box is-flex">
                 <p id="pg2-quote" placeholder="show quote here">
-                    <!-- append quote text content here -->
+                    <!-- append quote text content here --> "Placeholder text"
                 </p>
             </div>
-            <div id="pg2-nav" class="block">
-                <button class="button is-info is-medium" id="breadcrumb">Back</button>
-                    <!-- link btn to index.html -->
-            </div>
         </div>
+
+        <div class="block">
+            <figure class="image is-128x128" src=""></figure>
+        </div>
+
+        <div id="pg2-nav" class="block">
+            <button class="button is-info is-medium" id="breadcrumb">Back</button>
+            <!-- link btn to index.html -->
+        </div>
+
     </main>
     <footer></footer>
     <script src="./assets/script.js"></script>

@@ -1,0 +1,21 @@
+main {
+    background-image: url(./images/star-wars-backgrounds-25.jpg);
+    background-size: auto 100vw;
+    background-position: center;
+    height: 100vw;
+}
+
+.container {
+    width: 100vw;
+}
+
+#pg2-quote-container {
+    background: none;
+    font-family: "Libre Franklin", sans-serif;
+    color: white;
+}
+
+#pg2-quote {
+    justify-content: center;
+}
+

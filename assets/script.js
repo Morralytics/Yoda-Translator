@@ -1,6 +1,9 @@
+var DropDowntrigger = document.querySelector('.button');
+var dropDownShow = document.querySelector('.dropdown');
 
-var DropDowntrigger = document.querySelector('#button')
-
+// Want to dynamically add filter boxes based on how many filters we decide to use
+// Dowm the road wishlist item
+var numOfFilter = 3;
 
 
 
@@ -33,27 +36,31 @@ const options = {
 	}
 };
 
-fetch('https://quotes15.p.rapidapi.com/quotes/random/', options)
-    .then(function (response) {
-      if (response.ok) {
-        console.log(response);
-        response.json().then(function (data) {
-          console.log(data);
-          console.log(data.content);
-          var input = data.content;
-        //   yodaTranslate(input);
-        });
-      } else {
-        alert("Error: " + response.statusText);
-      }
-    })
-    .catch(function (error) {
-      alert("Unable to connect to API");
-    });
+
+// Commenting out so when any of us test the website, we dont max out the number of API calls within the hour
+// fetch('https://quotes15.p.rapidapi.com/quotes/random/', options)
+//     .then(function (response) {
+//       if (response.ok) {
+//         console.log(response);
+//         response.json().then(function (data) {
+//           console.log(data);
+//           console.log(data.content);
+//           var input = data.content;
+//         //   yodaTranslate(input);
+//         });
+//       } else {
+//         alert("Error: " + response.statusText);
+//       }
+//     })
+//     .catch(function (error) {
+//       alert("Unable to connect to API");
+//     });
 
 var DropFunction = function(event){
 event.preventDefault();
+
+dropDownShow.classList.add('is-active');
 console.log('click');
 };
 
- DropDowntrigger.addEventListener("click", DropFunction);
+DropDowntrigger.addEventListener("click", DropFunction);

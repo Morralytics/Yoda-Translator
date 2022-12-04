@@ -5,17 +5,14 @@ main {
     height: 100vw;
 }
 
-.container {
-    width: 100vw;
+#flex-1, #flex-2, #flex-3 {
+    align-items: center;
+    justify-content: center;
 }
 
 #pg2-quote-container {
-    background: none;
-    font-family: "Libre Franklin", sans-serif;
     color: white;
-}
-
-#pg2-quote {
-    justify-content: center;
+    font-family: "Libre Franklin", sans-serif;
+    background: none;
 }
 

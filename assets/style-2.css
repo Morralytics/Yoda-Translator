@@ -1,7 +1,7 @@
 main {
-    background-image: url(./images/star-wars-backgrounds-25.jpg);
+    /* background-image: url(./images/star-wars-backgrounds-25.jpg); */
     background-size: auto 100vw;
-    background-position: center;
+    background-position: cover;
     height: 100vw;
 }
 
@@ -11,8 +11,22 @@ main {
 }
 
 #pg2-quote-container {
-    color: white;
+    /* color: white; */
     font-family: "Libre Franklin", sans-serif;
+    font-weight: 400;
     background: none;
+}
+
+@font-face {
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 400;
+    src: url(./Fonts/LibreFranklin-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "";
+    src: url(./Fonts/StarJediHollow-A4lL.ttf);
+    color: rgb(226, 201, 36);
+    /* size: 50px; */
 }
 

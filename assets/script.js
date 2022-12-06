@@ -1,5 +1,6 @@
 var DropDowntrigger = document.querySelector('.button');
 var dropDownShow = document.querySelector('.dropdown');
+var filterBtn = document.querySelector('.filter-btn')
 var submitBtn = document.querySelector('.submit-btn');
 var backBtn = document.querySelector('.back-btn');
 var tagOptions = document.querySelectorAll('.filter-option');
@@ -65,7 +66,6 @@ var DropFunction = function(event){
 	event.preventDefault();
 
 	dropDownShow.classList.add('is-active');
-
 };
 
 
@@ -81,6 +81,8 @@ if (backBtn != null) {
 		document.location.href = './index.html';
 	});
 };
+
+
 
 for (i of tagOptions) {
 	i.addEventListener('click', function() {

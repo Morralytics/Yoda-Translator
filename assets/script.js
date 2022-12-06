@@ -1,5 +1,6 @@
 var DropDowntrigger = document.querySelector('.button');
 var dropDownShow = document.querySelector('.dropdown');
+var submitBtn = document.querySelector('.submit-btn');
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item
@@ -62,5 +63,9 @@ event.preventDefault();
 dropDownShow.classList.add('is-active');
 console.log('click');
 };
+
+submitBtn.addEventListener('click', function() {
+
+});
 
 DropDowntrigger.addEventListener("click", DropFunction);

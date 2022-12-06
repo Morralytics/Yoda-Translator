@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Star Jedi Hollow";
+    src: url(./Fonts/StarJediHollow-A4lL.ttf) format("truetype");
+    font-style: normal;
+    /* color: rgb(226, 201, 36); */
+    /* size: 3rem; */
+}
+
 body {
     background-image: url(./images/wallpaperflare.com_wallpaper.jpg);
     /* background-image: url(https://thumbs.gfycat.com/FaithfulSlowCoelacanth-mobile.mp4) */
@@ -13,9 +21,10 @@ body {
 }
 
 #pg2-title {
-    font-family: "";
+    font-family: "Star Jedi Hollow";
     src: url(./Fonts/StarJediHollow-A4lL.ttf);
-    font-weight: regular;
+    font-weight: normal;
+    font-size: 3rem;
     /* text-align: center; */
 }
 
@@ -44,11 +53,3 @@ footer {
     font-weight: 400;
     src: url(./Fonts/LibreFranklin-VariableFont_wght.ttf);
 } */
-
-/* @font-face {
-    font-family: "";
-    src: url(./Fonts/StarJediHollow-A4lL.ttf);
-    color: rgb(226, 201, 36);
-    /* size: 3rem; 
-} */
-

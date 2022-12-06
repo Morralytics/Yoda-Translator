@@ -1,5 +1,11 @@
 var DropDowntrigger = document.querySelector('.button');
 var dropDownShow = document.querySelector('.dropdown');
+var filterBtn = document.querySelector('.filter-btn')
+var submitBtn = document.querySelector('.submit-btn');
+var backBtn = document.querySelector('.back-btn');
+var tagOptions = document.querySelectorAll('.filter-option');
+var tempFilterTxt = document.querySelector('.temp-filter');
+
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item
@@ -57,10 +63,33 @@ const options = {
 //     });
 
 var DropFunction = function(event){
-event.preventDefault();
+	event.preventDefault();
 
-dropDownShow.classList.add('is-active');
-console.log('click');
+	dropDownShow.classList.add('is-active');
+};
+
+
+if (submitBtn != null) {
+	submitBtn.addEventListener('click', function() {
+		document.location.href = './result.html';
+	});
+};
+
+if (backBtn != null) {
+	backBtn.addEventListener('click', function() {
+		console.log('clicking');
+		document.location.href = './index.html';
+	});
+};
+
+
+
+for (i of tagOptions) {
+	i.addEventListener('click', function() {
+		var chosenTag = this.textContent.trim();
+		tempFilterTxt.textContent = chosenTag;
+		dropDownShow.classList.remove('is-active');
+	});
 };
 
 DropDowntrigger.addEventListener("click", DropFunction);

@@ -22,7 +22,7 @@ var yodaTranslate = function (input) {
 };
 
 function filterbychr(input) {
-  input = input.replace(/[^\w\s.&-]+/g, '');
+  input = input.replace(/[^\w\s.&-]+/g, "");
   console.log(input);
 }
 
@@ -40,8 +40,11 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
       console.log(response);
       response.json().then(function (data) {
         console.log(data);
-        console.log(data.content);
+        var tags = data.tags;
+        var author = data.originator.name
         var input = data.content;
+        console.log(tags);
+        console.log(author);
         filterbychr(input);
       });
     } else {
@@ -51,8 +54,6 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
   .catch(function (error) {
     alert("Unable to connect to API");
   });
-
-
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item

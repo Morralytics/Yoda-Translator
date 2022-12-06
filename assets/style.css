@@ -8,3 +8,12 @@ footer {
     bottom: 0;
     min-width: 100%;
 }
+
+.custom-dropdown-menu {
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}

@@ -1,9 +1,6 @@
-var filter1 = document.querySelector("#filter1");
-
-var filter2 = document.querySelector("#filter2");
-
-var filter3 = document.querySelector("#filter3");
-var input =" The art of war teaches us to rely not on the likelihood of the enemy's not coming but on our own readiness to receive him not on the chance of his not attacking but rather on the fact that we have made our position unassailable."
+var numOfFilter = 3;
+var DropDowntrigger = document.querySelector(".button");
+var dropDownShow = document.querySelector(".dropdown");
 
 var yodaTranslate = function (input) {
   var yoda =
@@ -24,6 +21,11 @@ var yodaTranslate = function (input) {
     });
 };
 
+function filterbychr(input) {
+  input = input.replace(/[^\w\s.&-]+/g, '');
+  console.log(input);
+}
+
 const options = {
   method: "GET",
   headers: {
@@ -40,7 +42,7 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
         console.log(data);
         console.log(data.content);
         var input = data.content;
-        //   yodaTranslate(input);
+        filterbychr(input);
       });
     } else {
       alert("Error: " + response.statusText);
@@ -50,20 +52,17 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
     alert("Unable to connect to API");
   });
 
-var f1= function (event) {
+
+
+// Want to dynamically add filter boxes based on how many filters we decide to use
+// Dowm the road wishlist item
+var numOfFilter = 3;
+
+var DropFunction = function (event) {
   event.preventDefault();
-  console.log("click");
-};
-var f2 = function (event) {
-  event.preventDefault();
-  console.log("click");
-};
-var f3= function (event) {
-  event.preventDefault();
+
+  dropDownShow.classList.add("is-active");
   console.log("click");
 };
 
-filter1.addEventListener("click", f1);
-filter2.addEventListener("click", f2);
-filter3.addEventListener("click", f3);
-yodaTranslate(input);
+DropDowntrigger.addEventListener("click", DropFunction);

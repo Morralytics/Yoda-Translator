@@ -14,7 +14,9 @@
   <body>
     <header></header>
 
-    <main class="contain is-fluid">
+    <main
+      class="contain is-fluid"
+    >
       <div class="columns">
         <section class="hero is-primary column is-12">
           <div class="hero-body">
@@ -24,11 +26,9 @@
         </section>
         <div
           class="box is-hidden is-flex is-justify-content-center columns is-12"
-        >
-          Quote box placeholder
+        > Quote box placeholder
         </div>
-
-        <div class="dropdown is-flex is-justify-content-center p-3">
+        <div class="dropdown is-flex is-justify-content-center m-3">
           <!-- is-active -->
           <div class="dropdown-trigger">
             <button
@@ -43,8 +43,8 @@
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-            <div class="dropdown-content">
+          <div class="dropdown-menu custom-dropdown-menu" id="dropdown-menu2" role="menu">
+            <div class="dropdown-content is-flex is-flex-direction-column">
               <div class="dropdown-item">
                 <p>
                   You can insert <strong>any type of content</strong> within the
@@ -62,8 +62,7 @@
             </div>
           </div>
         </div>
-
-        <div class="dropdown is-flex is-justify-content-center p-3">
+        <div class="dropdown is-flex is-justify-content-center m-3">
           <!-- is-active -->
           <div class="dropdown-trigger">
             <button
@@ -98,7 +97,7 @@
           </div>
         </div>
 
-        <div class="dropdown is-flex is-justify-content-center p-3">
+        <div class="dropdown is-flex is-justify-content-center m-3">
           <!-- is-active -->
           <div class="dropdown-trigger">
             <button
@@ -133,10 +132,11 @@
           </div>
         </div>
       </div>
+    </section>
     </main>
 
-    <footer class="footer">
-      <div class="content has-text-centered">
+    <footer class="footer is-flex">
+      <div class="">
         <p>
           <strong>Bulma</strong> by
           <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
@@ -149,6 +149,6 @@
         </p>
       </div>
     </footer>
-    <script src="/Project-1/assets/script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

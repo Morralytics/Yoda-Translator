@@ -3,3 +3,8 @@
     content: "\2193";
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+}

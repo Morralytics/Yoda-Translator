@@ -22,3 +22,10 @@ on submit, lightsaber sound
 Font is Star Wars font
 separate quote screen after submit? (window.location to new page, with breadcrumb or something to link back to index)
 Look into dropdown icon 
+
+
+Image sources:
+Star Wars backgrounds: https://www.starwars.com/news/star-wars-backgrounds
+
+Lightsabers: http://clipart-library.com/free/star-wars-lightsaber-png.html
+

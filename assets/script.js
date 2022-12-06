@@ -2,6 +2,8 @@ var DropDowntrigger = document.querySelector('.button');
 var dropDownShow = document.querySelector('.dropdown');
 var submitBtn = document.querySelector('.submit-btn');
 var backBtn = document.querySelector('.back-btn');
+var tagOptions = document.querySelectorAll('.filter-option');
+
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item
@@ -62,7 +64,7 @@ var DropFunction = function(event){
 event.preventDefault();
 
 dropDownShow.classList.add('is-active');
-console.log('click');
+
 };
 
 
@@ -76,6 +78,13 @@ if (backBtn != null) {
 	backBtn.addEventListener('click', function() {
 		console.log('clicking');
 		document.location.href = './index.html';
+	});
+};
+
+for (i of tagOptions) {
+	i.addEventListener('click', function() {
+		var chosenTag = this.textContent.trim();
+		console.log(chosenTag);
 	});
 };
 

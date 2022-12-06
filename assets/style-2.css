@@ -13,20 +13,22 @@ main {
 #pg2-quote-container {
     /* color: white; */
     font-family: "Libre Franklin", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
     background: none;
 }
 
-@font-face {
+/* @font-face {
     font-family: "Libre Franklin", sans-serif;
     font-weight: 400;
     src: url(./Fonts/LibreFranklin-VariableFont_wght.ttf);
-}
+} */
 
 @font-face {
     font-family: "";
     src: url(./Fonts/StarJediHollow-A4lL.ttf);
     color: rgb(226, 201, 36);
-    /* size: 50px; */
+    /* size: 3rem; */
 }
 

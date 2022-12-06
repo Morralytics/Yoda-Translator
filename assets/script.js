@@ -3,6 +3,7 @@ var dropDownShow = document.querySelector('.dropdown');
 var submitBtn = document.querySelector('.submit-btn');
 var backBtn = document.querySelector('.back-btn');
 var tagOptions = document.querySelectorAll('.filter-option');
+var tempFilterTxt = document.querySelector('.temp-filter');
 
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
@@ -61,9 +62,9 @@ const options = {
 //     });
 
 var DropFunction = function(event){
-event.preventDefault();
+	event.preventDefault();
 
-dropDownShow.classList.add('is-active');
+	dropDownShow.classList.add('is-active');
 
 };
 
@@ -84,7 +85,8 @@ if (backBtn != null) {
 for (i of tagOptions) {
 	i.addEventListener('click', function() {
 		var chosenTag = this.textContent.trim();
-		console.log(chosenTag);
+		tempFilterTxt.textContent = chosenTag;
+		dropDownShow.classList.remove('is-active');
 	});
 };
 

@@ -65,7 +65,7 @@ console.log('click');
 };
 
 submitBtn.addEventListener('click', function() {
-
+	document.location.href = './result.html';
 });
 
 DropDowntrigger.addEventListener("click", DropFunction);

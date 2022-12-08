@@ -26,7 +26,11 @@ var DropFunction = function (event) {
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
+    // grab chosen tag in var
+    // clear tagopt1
+    // var tagopt1 = 'funny'
     generateAdjustment();
+    displayBlaster();
     displayProgressBar();
     quote();
     // document.location.href = "./result.html";
@@ -117,14 +121,18 @@ var yodaTranslate = function (input) {
 var displayProgressBar = function() {
   var barPlacement = document.querySelector('.progress-bar');
   var progressBar = document.createElement('progress');
-  progressBar.className = 'progress custom-progress is-danger';
-
+  progressBar.setAttribute('class', 'progress is-small custom-progress is-danger');
   barPlacement.appendChild(progressBar);
 };
 
-// var progressBarUpdate = function() {
-//   document.querySelector('.progress').value += 15;
-// };
+var displayBlaster = function() {
+  var barPlacement = document.querySelector('.progress-bar');
+  var blaster = document.createElement('img');
+  blaster.setAttribute('id', 'blaster-rifle');
+  blaster.setAttribute('src', './assets/images/han-solo2.png');
+
+  barPlacement.appendChild(blaster);
+}
 
 var generateAdjustment = function() {
   submitBtn.textContent = 'Yoda-fying!';

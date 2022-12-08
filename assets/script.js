@@ -26,8 +26,8 @@ var DropFunction = function (event) {
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
-    var loadingTime = null;
-    progressBarUpdate();
+    generateAdjustment();
+    displayProgressBar();
     quote();
     // document.location.href = "./result.html";
   });
@@ -115,12 +115,20 @@ var yodaTranslate = function (input) {
 };
 
 var displayProgressBar = function() {
+  var barPlacement = document.querySelector('.progress-bar');
+  var progressBar = document.createElement('progress');
+  progressBar.className = 'progress custom-progress is-danger';
 
+  barPlacement.appendChild(progressBar);
 };
 
-var progressBarUpdate = function() {
-  document.querySelector('.progress').value += 15;
-};
+// var progressBarUpdate = function() {
+//   document.querySelector('.progress').value += 15;
+// };
+
+var generateAdjustment = function() {
+  submitBtn.textContent = 'Yoda-fying!';
+}
 
 // function filterbychr(input, author) {
 //   checker = /^T/;

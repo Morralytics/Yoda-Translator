@@ -26,6 +26,8 @@ var DropFunction = function (event) {
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
+    var loadingTime = null;
+    setInterval(handler)
     document.location.href = "./result.html";
   });
 }
@@ -111,19 +113,19 @@ var yodaTranslate = function (input) {
     });
 };
 
-function filterbychr(input, author) {
-  checker = /^T/;
-  checker.test(author);
-  result = checker.test(author);
-  console.log(result);
-  if (result === false) {
-    setTimeout(quote, 1000);
-  } else {
-    input = input.replace(/[^\w\s.&-]+/g, "");
-    console.log(input);
-    yodaTranslate(input);
-  }
-}
+// function filterbychr(input, author) {
+//   checker = /^T/;
+//   checker.test(author);
+//   result = checker.test(author);
+//   console.log(result);
+//   if (result === false) {
+//     setTimeout(quote, 1000);
+//   } else {
+//     input = input.replace(/[^\w\s.&-]+/g, "");
+//     console.log(input);
+//     yodaTranslate(input);
+//   }
+// }
 
 var quote = function () {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)

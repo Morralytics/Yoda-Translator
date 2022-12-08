@@ -5,7 +5,20 @@ var submitBtn = document.querySelector(".submit-btn");
 var backBtn = document.querySelector(".back-btn");
 var tagOptions = document.querySelectorAll(".filter-option");
 var tempFilterTxt = document.querySelector(".temp-filter");
-
+var Sad = ["happiness", "cry", "loss", "death", "doing"];
+var life = ["living", "doinig", "use", "making"];
+var friendship = ["family", "love", "hostility", "other", "friend"];
+var love = [
+  "valentine's day",
+  "love",
+  "making love",
+  "partnership",
+  "gauge",
+  "romantic",
+  "cute",
+];
+var funny = ["life", "people", "man", "funny", "want", "thing"];
+var common = [];
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item
 var numOfFilter = 3;
@@ -46,51 +59,43 @@ for (i of tagOptions) {
 }
 
 DropDowntrigger.addEventListener("click", DropFunction);
-var Sad = [
-  "happiness",
-  "cry",
-  "loss",
-  "death",
-  "likeness",
-  "life",
-  "doing",
-  "people",
-  "thing",
-];
-var life = ["living", "doinig", "use", "thing", "people", "likeness", "making"];
-var friendship = [
-  "family",
-  "love",
-  "life",
-  "hostility",
-  "other",
-  "friend",
-  "people",
-  "likeness",
-  "use",
-];
-var love = [
-  "Valentine's day",
-  "love",
-  "making love",
-  "partnership",
-  "gauge",
-  "romantic",
-  "cute",
-  "for her",
-  "for him",
-];
-var funny = [
-  "cute",
-  "life",
-  "people",
-  "doing",
-  "man",
-  "life",
-  "likeness",
-  "want",
-  "thing",
-];
+
+// Function to return commonElements
+function getCommon(tagsL, input, funny) {
+  tagsL.sort(); // Sort both the arrays
+  funny.sort(); // Array to contain common elements
+  var i = 0,
+    j = 0; // i points to arr1 and j to arr2
+  // Break if one of them runs out
+  while (i < tagsL.length && j < funny.length) {
+    if (tagsL[i] == funny[j]) {
+      // If both are same, add it to result
+      common.push(tagsL[i]);
+      i++;
+      j++;
+    } else if (tagsL[i] < funny[j]) {
+      // Increment the smaller value so that
+      i++; // it could be matched with the larger
+    } // element
+    else {
+      j++;
+    }
+  }
+  console.log(common.length);
+  if (common.length < 3) {
+    common.length = 0;
+    console.log(tagsL);
+    console.log(common.length);
+    setTimeout(quote, 1400);
+  } else {
+    input = input.replace(/[^\w\s.&-]+/g, "");
+    console.log(input);
+    console.log(common);
+    // yodaTranslate(input);
+    console.log("yes I am three");
+  }
+}
+
 var yodaTranslate = function (input) {
   var yoda =
     "https://api.funtranslations.com/translate/yoda.json?text=" + input + ".";
@@ -101,6 +106,7 @@ var yodaTranslate = function (input) {
         response.json().then(function (data) {
           console.log(data);
           console.log(data.contents.translated);
+          var YodaQuote = data.contents.translated;
         });
       } else {
         alert("Error: " + response.statusText);
@@ -111,18 +117,11 @@ var yodaTranslate = function (input) {
     });
 };
 
-function filterbychr(input, author) {
-  checker = /^T/;
-  checker.test(author);
-  result = checker.test(author);
-  console.log(result);
-  if (result === false) {
-    setTimeout(quote, 1000);
-  } else {
-    input = input.replace(/[^\w\s.&-]+/g, "");
-    console.log(input);
-    yodaTranslate(input);
-  }
+function filterbychr(input, funny, tags) {
+  const tagsL = tags.map((element) => {
+    return element.toLowerCase();
+  });
+  getCommon(tagsL, input, funny);
 }
 
 var quote = function () {
@@ -133,11 +132,8 @@ var quote = function () {
         response.json().then(function (data) {
           console.log(data);
           var tags = data.tags;
-          var author = data.originator.name;
           var input = data.content;
-          console.log(tags);
-          console.log(author);
-          filterbychr(input, author);
+          filterbychr(input, funny, tags);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -157,6 +153,6 @@ var DropFunction = function (event) {
   dropDownShow.classList.add("is-active");
   console.log("click");
 };
-quote();
-
+// quote(funny);
+quote(funny);
 DropDowntrigger.addEventListener("click", DropFunction);

@@ -1,11 +1,16 @@
+html {
+    background-color: #fafafa;
+}
+
 .fa-angle-down:before {
     /* Look into icon */
     content: "\2193";
 }
 
-footer {
+.footer {
     position: absolute;
     bottom: 0;
+    padding: 5%;
     min-width: 100%;
 }
 
@@ -16,4 +21,21 @@ footer {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+#blaster-rifle {
+    height: 100px;
+    background-color: white;
+}
+
+.progress-bar {
+    display: flex;
+}
+
+.custom-progress {
+    margin-top: 25px;
+}
+
+.progress.is-danger:indeterminate {
+    background-image: linear-gradient(to right,red 30%,#ededed 30%);
 }

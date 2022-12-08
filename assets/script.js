@@ -20,15 +20,16 @@ const options = {
 
 var DropFunction = function (event) {
   event.preventDefault();
-
+  
   dropDownShow.classList.add("is-active");
 };
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
     var loadingTime = null;
-    setInterval(handler)
-    document.location.href = "./result.html";
+    progressBarUpdate();
+    quote();
+    // document.location.href = "./result.html";
   });
 }
 
@@ -113,6 +114,14 @@ var yodaTranslate = function (input) {
     });
 };
 
+var displayProgressBar = function() {
+
+};
+
+var progressBarUpdate = function() {
+  document.querySelector('.progress').value += 15;
+};
+
 // function filterbychr(input, author) {
 //   checker = /^T/;
 //   checker.test(author);
@@ -159,6 +168,6 @@ var DropFunction = function (event) {
   dropDownShow.classList.add("is-active");
   console.log("click");
 };
-quote();
+
 
 DropDowntrigger.addEventListener("click", DropFunction);

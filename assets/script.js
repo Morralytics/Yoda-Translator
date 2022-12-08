@@ -20,13 +20,20 @@ const options = {
 
 var DropFunction = function (event) {
   event.preventDefault();
-
+  
   dropDownShow.classList.add("is-active");
 };
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
-    document.location.href = "./result.html";
+    // grab chosen tag in var
+    // clear tagopt1
+    // var tagopt1 = 'funny'
+    generateAdjustment();
+    displayBlaster();
+    displayProgressBar();
+    quote();
+    // document.location.href = "./result.html";
   });
 }
 
@@ -111,19 +118,39 @@ var yodaTranslate = function (input) {
     });
 };
 
-function filterbychr(input, author) {
-  checker = /^T/;
-  checker.test(author);
-  result = checker.test(author);
-  console.log(result);
-  if (result === false) {
-    setTimeout(quote, 1000);
-  } else {
-    input = input.replace(/[^\w\s.&-]+/g, "");
-    console.log(input);
-    yodaTranslate(input);
-  }
+var displayProgressBar = function() {
+  var barPlacement = document.querySelector('.progress-bar');
+  var progressBar = document.createElement('progress');
+  progressBar.setAttribute('class', 'progress is-small custom-progress is-danger');
+  barPlacement.appendChild(progressBar);
+};
+
+var displayBlaster = function() {
+  var barPlacement = document.querySelector('.progress-bar');
+  var blaster = document.createElement('img');
+  blaster.setAttribute('id', 'blaster-rifle');
+  blaster.setAttribute('src', './assets/images/han-solo2.png');
+
+  barPlacement.appendChild(blaster);
 }
+
+var generateAdjustment = function() {
+  submitBtn.textContent = 'Yoda-fying!';
+}
+
+// function filterbychr(input, author) {
+//   checker = /^T/;
+//   checker.test(author);
+//   result = checker.test(author);
+//   console.log(result);
+//   if (result === false) {
+//     setTimeout(quote, 1000);
+//   } else {
+//     input = input.replace(/[^\w\s.&-]+/g, "");
+//     console.log(input);
+//     yodaTranslate(input);
+//   }
+// }
 
 var quote = function () {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
@@ -157,6 +184,6 @@ var DropFunction = function (event) {
   dropDownShow.classList.add("is-active");
   console.log("click");
 };
-quote();
+
 
 DropDowntrigger.addEventListener("click", DropFunction);

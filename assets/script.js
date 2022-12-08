@@ -100,6 +100,7 @@ var yodaTranslate = function (input) {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
+          console.log(data.contents.translated);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -120,6 +121,7 @@ function filterbychr(input, author) {
   } else {
     input = input.replace(/[^\w\s.&-]+/g, "");
     console.log(input);
+    yodaTranslate(input);
   }
 }
 

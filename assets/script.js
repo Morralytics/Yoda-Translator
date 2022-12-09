@@ -57,6 +57,8 @@ if (backBtn != null) {
   backBtn.addEventListener("click", function () {
     console.log("clicking");
     document.location.href = "./index.html";
+    //will need to clear local storage at some point
+    clearStorage();
   });
 }
 
@@ -173,6 +175,22 @@ var generateAdjustment = function() {
 //   }
 // }
 
+//need to clear storage at some point; ideally when clicking the back button (otherwise every quote will be saved and potentially appended to the page)
+function clearStorage() {
+  localStorage.clear();
+};
+
+var quoteContainer = document.querySelector("#pg2-quote-container");
+function goTo(input) {
+  window.location.assign("./result.html");
+  document.location.href("./result.html");
+  localStorage.getItem();
+    var quoteBox = document.createElement("#pg2-quote");
+    var mostRecent = localStorage.length().slice(0); //most recent quote appears to be saved to START of index, not end
+  quoteContainer.appendChild(quoteBox);
+  quoteBox.textContent(mostRecent);
+};
+
 var quote = function () {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
     .then(function (response) {
@@ -182,9 +200,12 @@ var quote = function () {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
+          localStorage.setItem("key", input); 
+            console.log(localStorage);
           filterbychr(input, funny, tags);
-        });
-      } else {
+          goTo();
+        })
+        } else {
         alert("Error: " + response.statusText);
       }
     })
@@ -201,6 +222,5 @@ var DropFunction = function (event) {
 
   dropDownShow.classList.add("is-active");
 };
-
 
 DropDowntrigger.addEventListener("click", DropFunction);

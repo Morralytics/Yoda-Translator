@@ -6,18 +6,9 @@ var backBtn = document.querySelector(".back-btn");
 var tagOptions = document.querySelectorAll(".filter-option");
 var tempFilterTxt = document.querySelector(".temp-filter");
 var Sad = ["happiness", "cry", "loss", "death", "doing"];
-var life = ["living", "doinig", "use", "making"];
+var funny = ["happiness", "cry", "loss", "death", "doing", "family", "love", "hostility", "other", "friend", "living", "doinig", "use", "making"];
 var friendship = ["family", "love", "hostility", "other", "friend"];
-var love = [
-  "valentine's day",
-  "love",
-  "making love",
-  "partnership",
-  "gauge",
-  "romantic",
-  "cute",
-];
-var funny = ["life", "people", "man", "funny", "want", "thing"];
+
 var common = [];
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item
@@ -45,7 +36,7 @@ if (submitBtn != null) {
     generateAdjustment();
     displayBlaster();
     displayProgressBar();
-    quote();
+    quote(funny);
     // document.location.href = "./result.html";
   });
 }
@@ -68,7 +59,8 @@ for (i of tagOptions) {
 DropDowntrigger.addEventListener("click", DropFunction);
 
 // Function to return commonElements
-function getCommon(tagsL, input, funny) {
+function getCommon(tagsL, funny, input) {
+
   tagsL.sort(); // Sort both the arrays
   funny.sort(); // Array to contain common elements
   var i = 0,
@@ -83,21 +75,24 @@ function getCommon(tagsL, input, funny) {
     } else if (tagsL[i] < funny[j]) {
       // Increment the smaller value so that
       i++; // it could be matched with the larger
+      console.log('this is i');
     } // element
     else {
       j++;
+      console.log('this is j');
     }
   }
   console.log(common.length);
+  console.log(common);
   if (common.length < 3) {
     common.length = 0;
-    console.log(tagsL);
-    console.log(common.length);
+    // console.log(tagsL);
+    // console.log(common.length);
     setTimeout(quote, 1400);
   } else {
     input = input.replace(/[^\w\s.&-]+/g, "");
-    console.log(input);
-    console.log(common);
+    // console.log(input);
+    // console.log(common);
     // yodaTranslate(input);
     console.log("yes I am three");
   }
@@ -111,8 +106,6 @@ var yodaTranslate = function (input) {
       if (response.ok) {
         console.log(response);
         response.json().then(function (data) {
-          console.log(data);
-          console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
         });
       } else {
@@ -144,19 +137,13 @@ var generateAdjustment = function() {
   submitBtn.textContent = 'Yoda-fying!';
 }
 
-// function filterbychr(input, author) {
-//   checker = /^T/;
-//   checker.test(author);
-//   result = checker.test(author);
-//   console.log(result);
-//   if (result === false) {
-//     setTimeout(quote, 1000);
-//   } else {
-//     input = input.replace(/[^\w\s.&-]+/g, "");
-//     console.log(input);
-//     yodaTranslate(input);
-//   }
-// }
+function filterbychr(input, funny, tags) {
+    input = input.replace(/[^\w\s.&-]+/g, "");
+    var tagsL = tags.map(name => name.toLowerCase());
+    console.log(input);
+ getCommon(tagsL, funny, input)
+  
+}
 
 var quote = function () {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
@@ -187,6 +174,5 @@ var DropFunction = function (event) {
   dropDownShow.classList.add("is-active");
   console.log("click");
 };
-
 
 DropDowntrigger.addEventListener("click", DropFunction);

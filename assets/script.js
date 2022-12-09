@@ -30,14 +30,21 @@ var DropFunction = function (event) {
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
-    // grab chosen tag in var
-    // clear tagopt1
-    // var tagopt1 = 'funny'
+    var chosenTag = tempFilterTxt.textContent;
+  
     generateAdjustment();
     displayBlaster();
     displayProgressBar();
+<<<<<<< HEAD
     quote(funny);
     // document.location.href = "./result.html";
+=======
+    quote();
+
+    setTimeout(function() {
+      document.location.href = "./result.html";
+    }, 5000);
+>>>>>>> 1542ce33f2ac916258134e40972f8ce882290218
   });
 }
 

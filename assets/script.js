@@ -115,15 +115,15 @@ var yodaTranslate = function (input) {
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
           //setlocal storage (will need to change to YodaQuote wehen ready for testing)
-          localStorage.setItem(input);
-          console.log(localStorage);
+          // localStorage.setItem(input);
+          // console.log(localStorage);
           //go to result.html
-          window.location.assign("./result.html");
+          // window.location.assign("./result.html");
           //get local storage (will need to change to YodaQuote wehen ready for testing)
-          localStorage.getItem(input);
+          // localStorage.getItem(input);
           //append local storage to quote box
-          var quoteBox = document.querySelectorAll("#pg2-quote-container").children();
-          quoteBox.textContent(input);
+          // var quoteBox = document.querySelectorAll("#pg2-quote-container").children();
+          // quoteBox.textContent(input);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -178,6 +178,12 @@ var quote = function () {
           var tags = data.tags;
           var input = data.content;
           filterbychr(input, funny, tags);
+          localStorage.setItem(input);
+          //testing functionality here first due to limitations of yoda api
+          window.location.assign("./result.html");
+          localStorage.getItem(input);
+          var quoteBox = document.querySelectorAll("#pg2-quote-container").children();
+          quoteBox.textContent('"' + input + '"' + '.');
         });
       } else {
         alert("Error: " + response.statusText);

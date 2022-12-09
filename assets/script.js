@@ -39,14 +39,16 @@ var DropFunction = function (event) {
 
 if (submitBtn != null) {
   submitBtn.addEventListener("click", function () {
-    // grab chosen tag in var
-    // clear tagopt1
-    // var tagopt1 = 'funny'
+    var chosenTag = tempFilterTxt.textContent;
+  
     generateAdjustment();
     displayBlaster();
     displayProgressBar();
     quote();
-    // document.location.href = "./result.html";
+
+    setTimeout(function() {
+      document.location.href = "./result.html";
+    }, 5000);
   });
 }
 

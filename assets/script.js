@@ -1,11 +1,12 @@
 var DropDowntrigger = document.querySelector(".button");
 var dropDownShow = document.querySelector(".dropdown");
 var filterBtn = document.querySelector(".filter-btn");
-var submitBtn = document.querySelector(".submit-btn");
+var generateBtn = document.querySelector(".submit-btn");
 var backBtn = document.querySelector(".back-btn");
 var tagOptions = document.querySelectorAll(".filter-option");
 var tempFilterTxt = document.querySelector(".temp-filter");
-var Sad = ["happiness", "cry", "loss", "death", "doing"];
+var tagOpt = null;
+var sad = ["happiness", "cry", "loss", "death", "doing"];
 var life = ["living", "doinig", "use", "making"];
 var friendship = ["family", "love", "hostility", "other", "friend"];
 var love = [
@@ -37,10 +38,10 @@ var DropFunction = function (event) {
   dropDownShow.classList.add("is-active");
 };
 
-if (submitBtn != null) {
-  submitBtn.addEventListener("click", function () {
-    var chosenTag = tempFilterTxt.textContent;
-  
+if (generateBtn != null) {
+  generateBtn.addEventListener("click", function () {
+    var chosenTag = tagOpt;
+    console.log(chosenTag);
     generateAdjustment();
     displayBlaster();
     displayProgressBar();
@@ -64,6 +65,16 @@ for (i of tagOptions) {
     var chosenTag = this.textContent.trim();
     tempFilterTxt.textContent = chosenTag;
     dropDownShow.classList.remove("is-active");
+
+    
+    if (chosenTag == 'Sad') {
+      tagOpt = sad;
+    } else if (chosenTag == 'Funny') {
+      tagOpt = funny;
+    } else if (chosenTag == 'Friendship') {
+      tagOpt = friendship;
+    }
+    return tagOpt;
   });
 }
 
@@ -142,8 +153,10 @@ var displayBlaster = function() {
   barPlacement.appendChild(blaster);
 }
 
+
+
 var generateAdjustment = function() {
-  submitBtn.textContent = 'Yoda-fying!';
+  generateBtn.textContent = 'Yoda-fying!';
 }
 
 // function filterbychr(input, author) {
@@ -187,7 +200,6 @@ var DropFunction = function (event) {
   event.preventDefault();
 
   dropDownShow.classList.add("is-active");
-  console.log("click");
 };
 
 

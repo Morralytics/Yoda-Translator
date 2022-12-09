@@ -114,16 +114,6 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-          //setlocal storage (will need to change to YodaQuote wehen ready for testing)
-          // localStorage.setItem(input);
-          // console.log(localStorage);
-          //go to result.html
-          // window.location.assign("./result.html");
-          //get local storage (will need to change to YodaQuote wehen ready for testing)
-          // localStorage.getItem(input);
-          //append local storage to quote box
-          // var quoteBox = document.querySelectorAll("#pg2-quote-container").children();
-          // quoteBox.textContent(input);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -178,13 +168,18 @@ var quote = function () {
           var tags = data.tags;
           var input = data.content;
           filterbychr(input, funny, tags);
-          localStorage.setItem(input);
-          //testing functionality here first due to limitations of yoda api
-          window.location.assign("./result.html");
-          localStorage.getItem(input);
-          var quoteBox = document.querySelectorAll("#pg2-quote-container").children();
-          quoteBox.textContent('"' + input + '"' + '.');
+          
+          //Sarah's test code below
+          (function setGetGoTo() {
+            localStorage.setItem(key, value);
+            console.log(localStorage);
+            document.location.href("./result.html");
+            var quoteBox = document.querySelector("#pg2-quote");
+            quoteBox.textContent(localStorage + ".");
+          })
         });
+          //end of Sarah's test code
+
       } else {
         alert("Error: " + response.statusText);
       }
@@ -193,6 +188,10 @@ var quote = function () {
       alert("Unable to connect to API");
     });
 };
+
+// function localStorage() {
+  
+// }
 
 // Want to dynamically add filter boxes based on how many filters we decide to use
 // Dowm the road wishlist item

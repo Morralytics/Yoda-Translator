@@ -47,9 +47,9 @@ if (generateBtn != null) {
     displayProgressBar();
     quote(chosenTag);
 
-    // setTimeout(function() {
-    //   // document.location.href = "./result.html";
-    // }, 5000);
+    setTimeout(function() {
+      document.location.href = "./result.html";
+    }, 5000);
   });
 }
 
@@ -129,7 +129,7 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-          goTo(YodaQuote);
+          pg2Quote(YodaQuote);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -177,11 +177,11 @@ function filterbychr(input, chosenTag, tags) {
 // }
 
 //testing variables outside function (to avoid using up limited API calls)
+
 // var quoteContainer = document.querySelector("#pg2-quote-container");
 // var quotePara = document.createElement("p");
 // quotePara.setAttribute("id", "pg2-quote");
 // var testQuote = localStorage.getItem("wisdom");
-
 
 // window.onload = function sarahTest() {
   // if ( (document.location.href = "/result.html") && (testQuote != null) ) { 
@@ -201,23 +201,27 @@ function filterbychr(input, chosenTag, tags) {
 // }
 
 //fxn shows translated quote on result.html
-function pg2Quote(YodaQuote) {
+window.onload = function pg2Quote(YodaQuote) {
   var mostRecent = localStorage.getItem("wisdom", YodaQuote); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page
-  var subtitleEl = document.querySelector("pg2-subtitle");
-  var subtitle = subtitleEl.textContent;
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
-
-  //only show text content if quote has been translated, else show 'try again' message
-    if (mostRecent != null) {
-      quotePara.textContent = '"' + mostRecent + '"'; //set <p> text content to most recently translated quote
-      quoteContainer.append(quotePara); //append <p> to div
-      subtitle = "Yoda has spoken."; //add subtitle
-    } else {
-      quotePara.textContent = "Yoda doesn't seem to have anything to say right now. Click the Back button to try again."
-    }
+  quotePara.textContent = '"' + mostRecent + '"';
+  quoteContainer.append(quotePara);
 }
+
+  //code below is probably not necessarily since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
+
+    //only show text content if quote has been translated, else show 'try again' message
+
+    //     if (mostRecent != null) {
+    //       quotePara.textContent = '"' + mostRecent + '"'; //set <p> text content to most recently translated quote
+    //       quoteContainer.append(quotePara); //append <p> to div
+    //       subtitle = "Yoda has spoken."; //add subtitle
+    //     } else {
+    //       quotePara.textContent = "Yoda doesn't seem to have anything to say right now. Click the Back button to try again."
+    //     }
+    // }
 
 var quote = function (chosenTag) {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)

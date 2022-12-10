@@ -1,15 +1,17 @@
 @font-face {
     font-family: "Star Jedi Hollow";
-    src: url(./Fonts/StarJediHollow-A4lL.ttf) format("truetype");
+    src: url("/assets/Fonts/StarJediHollow.woff") format("woff"), url("/assets/Fonts/StarJediHollow.woff2") format("woff2");
     font-style: normal;
-    /* color: rgb(226, 201, 36); */
-    /* size: 3rem; */
+    font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Star Jedi";
-    src: url(./Fonts/StarJedi-DGRW.ttf) format("truetype");
+    src: url("/assets/Fonts/StarJedi.woff") format("woff"), url("/assets/Fonts/StarJedi.woff2") format("woff2");
     font-style: normal;
+    font-weight: normal;
+    font-display: swap;
 }
 
 body {

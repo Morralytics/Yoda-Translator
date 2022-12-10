@@ -173,20 +173,30 @@ function filterbychr(input, chosenTag, tags) {
   getCommon(tagsL, chosenTag, input);
 }
 
-//need to clear storage at some point; ideally when clicking the back button (otherwise every quote will be saved and potentially appended to the page)
-function clearStorage() {
-  localStorage.clear();
-}
+//need to clear storage at some point
+// function clearStorage() {
+//   localStorage.clear();
+// }
 
+//testing variables outside function (to avoid using up limited API calls)
 var quoteContainer = document.querySelector("#pg2-quote-container");
-function goTo(YodaQuote) {
-  window.location.assign("./result.html");
-  document.location.href("./result.html");
-  localStorage.getItem("key", YodaQuote);
-    var quoteBox = document.createElement("#pg2-quote");
-    var mostRecent = localStorage.length().slice(0); //most recent quote appears to be saved to START of index, not end
-  quoteContainer.appendChild(quoteBox);
-  quoteBox.textContent(mostRecent);
+var quotePara = document.createElement("p");
+quotePara.setAttribute("id", "pg2-quote");
+var testQuote = localStorage.getItem("wisdom");
+quotePara.textContent = '"' + testQuote + '"';
+quoteContainer.append(quotePara);
+    console.log("test quote: " + testQuote)
+    console.log("quoteContainer: " + quoteContainer)
+    console.log("quoteBox: " + quotePara)
+
+//fxn shows translated quote on result.html
+function pg2Quote(YodaQuote) {
+  var mostRecent = localStorage.getItem("wisdom", YodaQuote); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page.
+  var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
+  var quotePara = document.createElement("p"); //create empty <p> to hold quote
+  quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
+  quotePara.textContent = '"' + mostRecent + '"'; //set <p> text content to most recently translated quote
+  quoteContainer.append(quotePara); //append <p> to div
 }
 
 var quote = function (chosenTag) {
@@ -198,8 +208,8 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-          localStorage.setItem("key", input);
-          console.log(localStorage);
+          localStorage.setItem("wisdom", input);
+            console.log(localStorage);
           filterbychr(input, chosenTag, tags);
 
         });

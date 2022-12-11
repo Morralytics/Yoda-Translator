@@ -155,7 +155,7 @@ var displayBlaster = function () {
   var blaster = document.createElement("img");
   blaster.setAttribute("id", "blaster-rifle");
   blaster.setAttribute("src", "./assets/images/han-solo2.png");
-
+  
   barPlacement.appendChild(blaster);
 };
 
@@ -210,15 +210,15 @@ window.onload = function pg2Quote(YodaQuote) {
   quoteContainer.append(quotePara);
 
   //append random yoda pic to page
-  var imgEl = document.getElementById("yoda-pic");
-  var yodaPix = newArray("/assets/images/baby-yoda-pissed.jpg", "/assets/images/yoda-1.jpg", "/assets/images/yoda-2.jpg");
-  var randomNum = Math.floor(Math.random() * yodaPix.length);
-  imgEl.src = yodaPix[randomNum];
+  // var imgEl = document.getElementById("yoda-pic");
+  // var yodaPix = newArray("/assets/images/baby-yoda-pissed.jpg", "/assets/images/yoda-1.jpg", "/assets/images/yoda-2.jpg");
+  // var randomNum = Math.floor(Math.random() * yodaPix.length);
+  // imgEl.src = yodaPix[randomNum];
 }
 
-var yodaPic = document.getElementById("yoda-pic");
-var yodaPix = ("./assets/images/yoda-1.jpg");
-yodaPic.src = "./assets/images/yoda-2.jpg";
+// var yodaPic = document.getElementById("yoda-pic");
+// var yodaPix = ("./assets/images/yoda-1.jpg");
+// yodaPic.src = "./assets/images/yoda-2.jpg";
 
   //code below is probably not necessary since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
 

@@ -14,6 +14,39 @@
     /* font-display: swap; */
 }
 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes myBtn {
+    0% {opacity: 0;}
+    /* 50% {opacity: 0.25;}
+    75% {opacity: 0.75;} */
+    100% {opacity: 1}
+    animation-delay: 10s;
+}
+
 body {
     background-image: url(./images/wallpaperflare.com_wallpaper.jpg);
     /* background-image: url(https://thumbs.gfycat.com/FaithfulSlowCoelacanth-mobile.mp4) */
@@ -26,6 +59,11 @@ body {
 #flex-1, #flex-2, #flex-3 {
     align-items: center;
     justify-content: center;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
 }
 
 #pg2-title {
@@ -34,6 +72,7 @@ body {
     font-weight: normal;
     font-size: 3rem;
     /* text-align: center; */
+    animation: fadeIn 2s;
 }
 
 #pg2-subtitle {
@@ -41,6 +80,7 @@ body {
     src: url(/assets/Fonts/LibreFranklin-VariableFont_wght.ttf);
     font-style: oblique;
     font-weight: 500;
+    animation: fadeIn 2s;
 }
 
 #pg2-quote-container {
@@ -57,6 +97,8 @@ body {
     font-family: "Star Jedi";
     font-size: 1.5rem;
     box-shadow: 0px 0px 10px 10px rgba(0, 255, 106, 0.642);
+    animation: myBtn 2.5s;
+    /* animation-delay: 10s; */
 }
 
 footer {

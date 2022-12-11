@@ -8,22 +8,23 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@0;1&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Yoda Translator</title>
   </head>
   <body>
     <header>
-      <section class="hero is-primary column is-12">
+      <section id="index-header" class="hero is-primary column is-12">
         <div class="hero-body">
           <p class="title">Yoda Translator</p>
-          <p class="subtitle">Translate quotes to Yoda-speak.</p>
+          <p class="subtitle">Translate words of wisdom to Yoda-speak.</p>
     </header>
     <main>
     <section class="container is-flex is-flex-direction-column p-0">
       <div class="is-flex-wrap-wrap is-justify-content-center m-0">
-        <div class="box is-flex is-justify-content-center m-5 is-size-4"> Quote box placeholder test items to see how large it will get based on how long the quote is from our man Yoda</div>
+        <div id="pg1-quote-box" class="box is-flex is-justify-content-center m-5 is-size-4"> Quote box placeholder test items to see how large it will get based on how long the quote is from our man Yoda</div>
         </div>
-        <div class="dropdown is-flex is-justify-content-center m-3">
+        <div id="dropdowns" class="dropdown is-flex is-justify-content-center m-3">
           <!-- is-active -->
           <div class="dropdown-trigger">
             <button
@@ -31,7 +32,7 @@
               aria-haspopup="true"
               aria-controls="dropdown-menu2"
             >
-              <span class="temp-filter">Select your chosen topic which Master Yoda will transcribe! &#129668;</span>
+              <span class="temp-filter">Select a theme of quote for Master Yoda to translate! &#129668;</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
@@ -62,8 +63,8 @@
           </div>
         </div>
       </div>
-      <div class="submit m-3">
-        <button class="submit-btn button is-medium is-fullwidth">Generate!</button>
+      <div id="btn-div" class="submit m-3">
+        <button id="genBtn" class="submit-btn button is-primary is-medium is-fullwidth">Generate!</button>
       </div>
       <div class="progress-bar">
       </div>
@@ -71,16 +72,10 @@
     </main>
 
     <footer class="footer is-flex">
-      <div class="">
-        <p>
-          <strong>Bulma</strong> by
-          <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-          licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-          website content is licensed
-          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-            >CC BY NC SA 4.0</a
-          >.
+      <div class="is-flex">
+        <p> This website was built using the
+          <strong>Bulma</strong> framework by
+          <a href="https://jgthms.com">Jeremy Thomas</a>.
         </p>
       </div>
     </footer>

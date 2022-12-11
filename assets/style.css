@@ -1,17 +1,90 @@
+@font-face {
+    font-family: "Star Jedi";
+    src: url("/assets/Fonts/StarJedi.woff2") format("woff"), url("/assets/Fonts/StarJediHollow.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+}
+
 html {
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
+    background-image: url(./images/WallpaperDog-17137737.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#index-header {
+    /* background-color: rgb(45, 51, 45); */
+    background: none;
+}
+
+header .title {
+    font-family: "Star Jedi";
+    font-size: 3rem;
+}
+
+header .subtitle {
+    font-family: "Libre Franklin", sans-serif;
+    font-style: oblique;
+    font-weight: 500;
+}
+
+main {
+    height: 100vh;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#pg1-quote-box, #dropdowns, #btn-div {
+    background: none;
+    font-family: "Libre Franklin", sans-serif;
+    text-shadow: 0px 5px 10px lightblue;
+    color: white;
+}
+
+.temp-filter {
+    color: rgb(233, 233, 233);
+}
+
+#genBtn {
+    font-family: "Star Jedi";
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 10px 5px lightblue;
 }
 
 .fa-angle-down:before {
     /* Look into icon */
     content: "\2193";
+    color: black;
+}
+
+.button, .dropdown-trigger {
+    background-color: rgba(128, 128, 128, 0.112);
+}
+
+.button {
+    box-shadow: 0px 0px 10px 3px lightblue;
+    margin-bottom: 5%;
 }
 
 .footer {
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     padding: 5%;
     min-width: 100%;
+    background-color: rgb(19, 19, 19);
+    font-family: "Libre Franklin", sans-serif;
+    font-size: .75rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+strong {
+    color: rgb(99, 99, 99);
 }
 
 .custom-dropdown-menu {
@@ -25,7 +98,8 @@ html {
 
 #blaster-rifle {
     height: 100px;
-    background-color: white;
+    /* background-color: white; */
+    background-blend-mode: exclusion;
 }
 
 .progress-bar {

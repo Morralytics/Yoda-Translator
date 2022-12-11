@@ -3,7 +3,7 @@
     src: url("/assets/Fonts/StarJediHollow.woff") format("woff"), url("/assets/Fonts/StarJediHollow.woff2") format("woff2");
     font-style: normal;
     font-weight: normal;
-    font-display: swap;
+    /* font-display: swap; */
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     src: url("/assets/Fonts/StarJedi.woff") format("woff"), url("/assets/Fonts/StarJedi.woff2") format("woff2");
     font-style: normal;
     font-weight: normal;
-    font-display: swap;
+    /* font-display: swap; */
 }
 
 body {

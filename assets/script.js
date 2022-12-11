@@ -210,7 +210,7 @@ window.onload = function pg2Quote(YodaQuote) {
   quoteContainer.append(quotePara);
 }
 
-  //code below is probably not necessarily since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
+  //code below is probably not necessary since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
 
     //only show text content if quote has been translated, else show 'try again' message
 

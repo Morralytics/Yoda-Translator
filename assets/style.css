@@ -6,6 +6,31 @@
     font-display: auto;
 }
 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 html {
     /* background-color: #fafafa; */
     background-image: url(./images/WallpaperDog-17137737.jpg);
@@ -24,12 +49,15 @@ html {
 header .title {
     font-family: "Star Jedi";
     font-size: 3rem;
+    animation: fadeIn 2s;
 }
 
 header .subtitle {
     font-family: "Libre Franklin", sans-serif;
     font-style: oblique;
     font-weight: 500;
+    animation-delay: 4s;
+    animation: fadeIn 6s;
 }
 
 main {
@@ -44,6 +72,7 @@ main {
     font-family: "Libre Franklin", sans-serif;
     text-shadow: 0px 5px 10px lightblue;
     color: white;
+    animation: fadeIn 5s;
 }
 
 .temp-filter {

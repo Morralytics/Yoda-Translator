@@ -96,7 +96,7 @@ body {
     font-style: italic;
     background: none;
     text-shadow: 0px 8px 10px black;
-    margin: 20% 10%;
+    margin-top: 10%;
 }
 
 #breadcrumb {
@@ -110,6 +110,6 @@ body {
 footer {
     position: absolute;
     bottom: 1;
-    margin-top: 5%;
+    /* margin-top: 5%; */
 }
 

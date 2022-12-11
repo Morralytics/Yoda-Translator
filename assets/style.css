@@ -145,8 +145,7 @@ strong {
 
 #blaster-rifle {
     height: 100px;
-    background: none;
-    background-blend-mode: exclusion;
+    mix-blend-mode: multiply;
 }
 
 .progress-bar {

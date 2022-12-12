@@ -129,6 +129,7 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
+          localStorage.setItem("wisdom", YodaQuote);
           pg2Quote(YodaQuote);
         });
       } else {
@@ -202,7 +203,7 @@ function filterbychr(input, chosenTag, tags) {
 
 //fxn shows translated quote on result.html
 window.onload = function pg2Quote(YodaQuote) {
-  var mostRecent = localStorage.getItem("wisdom", YodaQuote); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page
+  var mostRecent = localStorage.getItem("wisdom"); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
@@ -242,7 +243,7 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-          localStorage.setItem("wisdom", input);
+          localStorage.setItem("key", input);
             console.log(localStorage);
           filterbychr(input, chosenTag, tags);
 

@@ -129,6 +129,7 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
+          localStorage.setItem("wisdom", YodaQuote);
           pg2Quote(YodaQuote);
         });
       } else {
@@ -155,7 +156,7 @@ var displayBlaster = function () {
   var blaster = document.createElement("img");
   blaster.setAttribute("id", "blaster-rifle");
   blaster.setAttribute("src", "./assets/images/han-solo2.png");
-
+  
   barPlacement.appendChild(blaster);
 };
 
@@ -202,13 +203,23 @@ function filterbychr(input, chosenTag, tags) {
 
 //fxn shows translated quote on result.html
 window.onload = function pg2Quote(YodaQuote) {
-  var mostRecent = localStorage.getItem("wisdom", YodaQuote); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page
+  var mostRecent = localStorage.getItem("wisdom"); //YodaQuote will save each new translated quote to "wisdom" key but if/when we start saving multiple quotes to local storage, we'll need to figure out how to grab only the most recent quote for showing on the second page
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
   quotePara.textContent = '"' + mostRecent + '"';
   quoteContainer.append(quotePara);
+
+  //append random yoda pic to page
+  // var imgEl = document.getElementById("yoda-pic");
+  // var yodaPix = newArray("/assets/images/baby-yoda-pissed.jpg", "/assets/images/yoda-1.jpg", "/assets/images/yoda-2.jpg");
+  // var randomNum = Math.floor(Math.random() * yodaPix.length);
+  // imgEl.src = yodaPix[randomNum];
 }
+
+// var yodaPic = document.getElementById("yoda-pic");
+// var yodaPix = ("./assets/images/yoda-1.jpg");
+// yodaPic.src = "./assets/images/yoda-2.jpg";
 
   //code below is probably not necessary since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
 
@@ -232,7 +243,7 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-          localStorage.setItem("wisdom", input);
+          localStorage.setItem("key", input);
             console.log(localStorage);
           filterbychr(input, chosenTag, tags);
 

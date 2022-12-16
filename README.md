@@ -1,1 +1,9 @@
-# Project-1
+This website is meant to generate a random quote within a certain theme. It does so by calling an API (https://rapidapi.com/andruxnet/api/random-famous-quotes/) to return a random quote. Then it will check the tags of that quote against the selected theme tags until returning a quote that has sufficient similar tags to the chosen theme. Once an appropriate quote has been found it will put the quote through a yoda translating API (https://funtranslations.com/api/yoda). Finally the translated quote will be saved to local storage and appended to the second page.  THe first page should appear as a background of Yoda in his home. In the top left corner there will be star wars themed text giving a brief description of the site. In the center of the page there is a drop down selector to choose a theme. Above the theme selector there is a brief set of directions. Below the theme selector there is a generate button. Upon clicking the generate button after selecting a theme a unique loading bar will appear and then the user shall be taken to the quote page. The quote page shall have some star wars text in the upper left hand corner. The entire page will have a background image of the death star being built. In the center of the page the Yoda text will be appended. Below the quote there will be a back button, this will take the user back to the main page. 
+
+THIS SITE IS LIMITED TO 5 API CALLS AN HOUR.    
+
+Here is a link to the git hub repo https://github.com/Volexity21/Project-1
+Here is an image of the live application 
+![.](./assets/images/Screenshot%202022-12-16%20115124.png)
+![.](./assets/images/Screenshot%202022-12-16%20115210.png)
+![.](./assets/images/Screenshot%202022-12-16%20115155.png)

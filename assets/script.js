@@ -123,7 +123,7 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-          localStorage.setItem("Yodish quote", YodaQuote);
+          localStorage.setItem("Yoda_Quote", YodaQuote);
           pg2Quote(YodaQuote);
         });
       } else {
@@ -167,7 +167,7 @@ function filterbychr(input, chosenTag, tags) {
 
 //fxn shows translated quote on result.html
 window.onload = function pg2Quote() {
-  var mostRecent = localStorage.getItem("Yodish quote"); 
+  var mostRecent = localStorage.getItem("Yoda_Quote"); 
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes

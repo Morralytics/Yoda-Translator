@@ -157,6 +157,7 @@ var displayBlaster = function () {
 var generateAdjustment = function () {
   generateBtn.textContent = "Yoda-fying!";
 };
+
 //filters out special character from quote and carries variables to be used later
 function filterbychr(input, chosenTag, tags) {
   input = input.replace(/[^\w\s.&-]+/g, "");
@@ -165,13 +166,14 @@ function filterbychr(input, chosenTag, tags) {
 };
 
 //fxn shows translated quote on result.html
-window.onload = function pg2Quote(YodaQuote) {
+window.onload = function pg2Quote() {
   var mostRecent = localStorage.getItem("wisdom"); 
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
   quotePara.textContent = '"' + mostRecent + '"';
   quoteContainer.append(quotePara);
+}
 
 //first API function calls for quote and tags
 var quote = function (chosenTag) {

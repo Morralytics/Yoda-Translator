@@ -192,7 +192,7 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-            localStorage.setItem("untranslatedQuote", input);
+            localStorage.setItem("key", input);
             console.log(localStorage);
           filterbychr(input, chosenTag, tags);
         });

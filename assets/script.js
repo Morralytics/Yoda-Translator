@@ -105,7 +105,7 @@ function getCommon(tagsL, chosenTag, input) {
       quote(chosenTag);
     }, 1400);
   } else {
-    // yodaTranslate(input);
+    yodaTranslate(input);
     console.log("yes I am three");
   }
 }
@@ -124,7 +124,7 @@ var yodaTranslate = function (input) {
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
             localStorage.setItem("wisdom", YodaQuote);
-            pg2Quote(YodaQuote);
+              pg2Quote(YodaQuote);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -181,7 +181,7 @@ window.onload = function pg2Quote(YodaQuote) {
           var untranslatedEl = document.createElement("p"); //create empty <p> to hold untranslated quote
           var yourRandQuote = document.createElement("p"); //create empty <p> to hold message
           var untranslatedQuote = localStorage.getItem("key"); //retrieve untranslated quote from local storage
-        quoteContainer.append(tryAgainMessEl); 
+        quoteContainer.append(tryAgainEl); 
           tryAgainEl.setAttribute("id", "tryAgain-message"); //set id for styling
             tryAgainEl.textContent = "There's been a problem with the translator. Please try again.";
               tryAgainEl.append(yourRandQuote); 
@@ -212,7 +212,7 @@ var quote = function (chosenTag) {
       }
     })
     .catch(function (error) {
-      alert("Unable to connect to Random Quote API");
+      alert("Unable to connect to API");
     });
 };
 

@@ -170,15 +170,22 @@ window.onload = function pg2Quote(YodaQuote) {
   var mostRecent = localStorage.getItem("wisdom"); 
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
-  quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
-  quotePara.textContent = '"' + mostRecent + '"';
-  quoteContainer.append(quotePara);
-    if (mostRecent == null) {
-      quotePara.textContent = '"A problem, there has been. Again you must try, Padawan."'
-      var errMessEl = document.createElement("p");
-      quoteContainer.append(errMessEl);
-      errMessEl.setAttribute("id", "tryAgain-message");
-      errMessEl.textContent = "There's been a problem with the translator. Please try again.";
+    quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
+    quotePara.textContent = '"' + mostRecent + '"';
+    quoteContainer.append(quotePara);
+
+    //code below to run only if no quote is translated (i.e. if "wisdom" storage key is empty)
+      if (mostRecent == null) {
+        quotePara.textContent = '"A problem, there has been. Again you must try, Padawan."'
+        var errMessEl = document.createElement("p");
+        var untranslatedEl = document.createElement("p");
+        var untranslatedQuote = localStorage.getItem("key");
+          quoteContainer.append(errMessEl);
+          errMessEl.setAttribute("id", "tryAgain-message");
+          errMessEl.textContent = "There's been a problem with the translator. Please try again.";
+            errMessEl.append(untranslatedEl);
+            untranslatedEl.setAttribute("id", "untranslated-quote");
+            untranslatedEl.textContent = "Your untranslated quote was: " + untranslatedQuote;
     };
 };
 
@@ -192,7 +199,7 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-            localStorage.setItem("key", input);
+            localStorage.setItem("key", input); //set random quote to local storage for later use
             console.log(localStorage);
           filterbychr(input, chosenTag, tags);
         });

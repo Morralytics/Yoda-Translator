@@ -106,6 +106,17 @@ body {
     box-shadow: none;
 }
 
+#untranslated-quote {
+    color: black;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    text-shadow: 10px 2px 10px lightgreen;
+}
+
 #breadcrumb {
     font-family: "Star Jedi";
     font-size: 1.5rem;

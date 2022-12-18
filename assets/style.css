@@ -92,6 +92,7 @@ main {
 
 .temp-filter {
     color: rgb(233, 233, 233);
+    font-size: 20px;
 }
 
 #genBtn {
@@ -115,7 +116,6 @@ main {
 
 .button {
     box-shadow: 0px 0px 10px 3px lightblue;
-    margin-bottom: 5%;
 }
 
 .footer {
@@ -143,6 +143,10 @@ strong {
     text-align: center;
 }
 
+.custom-dropdown {
+    padding: 1rem;
+}
+
 #blaster-rifle {
     height: 100px;
     mix-blend-mode: multiply;
@@ -158,4 +162,24 @@ strong {
 
 .progress.is-danger:indeterminate {
     background-image: linear-gradient(to right,red 30%,#ededed 30%);
+}
+
+.dropdown-content,
+.dropdown-item {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.filter-option {
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    width: 150%;
+    font-size: 120%;
+    margin-top: -10px;
+    background-color: rgba(128, 128, 128, 0.112);
+    color: rgb(233, 233, 233);
+}
+
+.filter-option:hover {
+    box-shadow: 0px 0px 10px 3px lightblue;
+    color: rgb(233, 233, 233);
 }

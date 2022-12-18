@@ -1,12 +1,4 @@
 @font-face {
-    font-family: "Star Jedi Hollow";
-    src: url("./Fonts/StarJediHollow.woff") format("woff"), url("/assets/Fonts/StarJediHollow.woff2") format("woff2");
-    font-style: normal;
-    font-weight: normal;
-    /* font-display: swap; */
-}
-
-@font-face {
     font-family: "Star Jedi";
     src: url("./Fonts/StarJedi.woff") format("woff"), url("/assets/Fonts/StarJedi.woff2") format("woff2");
     font-style: normal;
@@ -41,16 +33,11 @@
 
 @keyframes myBtn {
     0% {opacity: 0;}
-    /* 50% {opacity: 0.25;}
-    75% {opacity: 0.75;} */
     100% {opacity: 1}
-    animation-delay: 10s;
 }
 
 body {
     background-image: url(./images/wallpaperflare.com_wallpaper.jpg);
-    /* background-image: url(https://thumbs.gfycat.com/FaithfulSlowCoelacanth-mobile.mp4) */
-    /* background-repeat: repeat; */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -66,23 +53,20 @@ body {
     -ms-animation: fadeIn 5s;
 }
 
-/* Transparent header? */
+/* Transparent header */
 #pg2-hero {
     background: none;
 }
 
 #pg2-title {
     font-family: "Star Jedi", serif;
-    /* src: url(./Fonts/StarJediHollow-A4lL.ttf); */
     font-weight: normal;
     font-size: 3rem;
-    /* text-align: center; */
     animation: fadeIn 2s;
 }
 
 #pg2-subtitle {
     font-family: "Libre Franklin", sans-serif;
-    src: url(/assets/Fonts/LibreFranklin-VariableFont_wght.ttf);
     font-style: oblique;
     font-weight: 500;
     animation: fadeIn 2s;
@@ -90,13 +74,41 @@ body {
 
 #pg2-quote-container {
     color: white;
+    text-align: center;
     font-family: "Libre Franklin", sans-serif;
     font-weight: 600;
     font-size: 2rem;
     font-style: italic;
     background: none;
-    text-shadow: 0px 8px 10px black;
-    margin-top: 10%;
+    text-shadow: 10px 2px 10px lightgreen;
+    margin-top: 8%;
+}
+
+#tryAgain-message, #rand-quote {
+    color: black;
+    text-align: center;
+    font-style: normal;
+    text-shadow: 0px 0px 10px lightskyblue;
+    padding-top: 2%;
+    font-weight: 700;
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#rand-quote {
+    color: white;
+}
+
+#untranslated-quote {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    text-shadow: 10px 2px 10px white;
 }
 
 #breadcrumb {
@@ -104,6 +116,7 @@ body {
     font-size: 1.5rem;
     box-shadow: 0px 0px 10px 10px rgba(0, 255, 106, 0.642);
     animation: myBtn 2.5s;
+    margin-top: 0;
     /* animation-delay: 10s; */
 }
 

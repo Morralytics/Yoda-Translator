@@ -174,10 +174,10 @@ window.onload = function pg2Quote(YodaQuote) {
   quotePara.textContent = '"' + mostRecent + '"';
   quoteContainer.append(quotePara);
     if (mostRecent == null) {
-      quotePara.textContent = '"A problem, there is. Again you must try, Padawan."'
+      quotePara.textContent = '"A problem, there has been. Again you must try, Padawan."'
       var errMessEl = document.createElement("p");
       quoteContainer.append(errMessEl);
-      errMessEl.setAttribute("id", "error-message");
+      errMessEl.setAttribute("id", "tryAgain-message");
       errMessEl.textContent = "There's been a problem with the translator. Please try again.";
     };
 };

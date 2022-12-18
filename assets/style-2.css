@@ -84,6 +84,7 @@ body {
 
 #pg2-quote-container {
     color: white;
+    text-align: center;
     font-family: "Libre Franklin", sans-serif;
     font-weight: 600;
     font-size: 2rem;
@@ -93,10 +94,10 @@ body {
     margin-top: 10%;
 }
 
-#error-message {
+#tryAgain-message {
+    color: black;
     text-align: center;
     font-style: normal;
-    color: black;
     text-shadow: 0px 0px 10px lightskyblue;
     padding-top: 5%;
     font-weight: 700;

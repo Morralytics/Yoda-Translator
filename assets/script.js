@@ -177,16 +177,20 @@ window.onload = function pg2Quote(YodaQuote) {
     //code below to run only if no quote is translated (i.e. if "wisdom" storage key is empty)
       if (mostRecent == null) {
         quotePara.textContent = '"A problem, there has been. Again you must try, Padawan."'
-        var errMessEl = document.createElement("p");
-        var untranslatedEl = document.createElement("p");
-        var untranslatedQuote = localStorage.getItem("key");
-          quoteContainer.append(errMessEl);
-          errMessEl.setAttribute("id", "tryAgain-message");
-          errMessEl.textContent = "There's been a problem with the translator. Please try again.";
-            errMessEl.append(untranslatedEl);
-            untranslatedEl.setAttribute("id", "untranslated-quote");
-            untranslatedEl.textContent = "Your untranslated quote was: " + untranslatedQuote;
-    };
+          var tryAgainEl = document.createElement("p"); //create empty <p> to hold try again message
+          var untranslatedEl = document.createElement("p"); //create empty <p> to hold untranslated quote
+          var yourRandQuote = document.createElement("p"); //create empty <p> to hold message
+          var untranslatedQuote = localStorage.getItem("key"); //retrieve untranslated quote from local storage
+        quoteContainer.append(tryAgainMessEl); 
+          tryAgainEl.setAttribute("id", "tryAgain-message"); //set id for styling
+            tryAgainEl.textContent = "There's been a problem with the translator. Please try again.";
+              tryAgainEl.append(yourRandQuote); 
+                yourRandQuote.setAttribute("id", "rand-quote"); //set id for styling
+                  yourRandQuote.textContent = "Your untranslated quote was: "; //append before untranslated quote
+              yourRandQuote.append(untranslatedEl); 
+                untranslatedEl.setAttribute("id", "untranslated-quote"); //set id for styling
+                  untranslatedEl.textContent = '"' + untranslatedQuote + '"';
+      };
 };
 
 //first API function calls for quote and tags

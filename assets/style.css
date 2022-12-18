@@ -1,9 +1,11 @@
 :root {
     /* Style definitions */
     --text-color: rgb(233, 233, 233);
+    --outer-highlight: 0px 0px 10px 3px lightblue;
 
     /* Animation Controls */
     --opacity-0: 0;
+    --opacity-1: 1;
 }
 
 @font-face {
@@ -16,27 +18,27 @@
 
 @keyframes fadeIn {
     0% {opacity: var(--opacity-0);}
-    100% {opacity: 1;}
+    100% {opacity: var(--opacity-1);}
 }
 
 @-moz-keyframes fadeIn {
     0% { opacity: var(--opacity-0); }
-    100% { opacity: 1; }
+    100% { opacity: var(--opacity-1); }
 }
 
 @-webkit-keyframes fadeIn {
     0% { opacity: var(--opacity-0); }
-    100% { opacity: 1; }
+    100% { opacity: var(--opacity-1); }
 }
 
 @-o-keyframes fadeIn {
     0% { opacity: var(--opacity-0); }
-    100% { opacity: 1; }
+    100% { opacity: var(--opacity-1); }
 }
 
 @-ms-keyframes fadeIn {
     0% { opacity: var(--opacity-0); }
-    100% { opacity: 1; }
+    100% { opacity: var(--opacity-1); }
 }
 
 html {
@@ -123,7 +125,7 @@ main {
 }
 
 .button {
-    box-shadow: 0px 0px 10px 3px lightblue;
+    box-shadow: var(--outer-highlight);
 }
 
 .footer {
@@ -188,6 +190,6 @@ strong {
 }
 
 .filter-option:hover {
-    box-shadow: 0px 0px 10px 3px lightblue;
+    box-shadow: var(--outer-highlight);
     color: var(--text-color);
 }

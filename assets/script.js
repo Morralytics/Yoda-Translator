@@ -123,8 +123,8 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-            localStorage.setItem("wisdom", YodaQuote);
-              pg2Quote(YodaQuote);
+          localStorage.setItem("wisdom", YodaQuote);
+          pg2Quote(YodaQuote);
         });
       } else {
         alert("Error: " + response.statusText);

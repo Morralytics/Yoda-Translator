@@ -123,17 +123,17 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-          localStorage.setItem("translatedQuote", YodaQuote);
-          pg2Quote(YodaQuote);
+            localStorage.setItem("wisdom", YodaQuote);
+            pg2Quote(YodaQuote);
         });
       } else {
         alert("Error: " + response.statusText);
       }
     })
     .catch(function (error) {
-      alert("Unable to connect to API");
+      alert("Unable to connect to Yoda Translator API");
     });
-}
+};
 
 var displayProgressBar = function () {
   var barPlacement = document.querySelector(".progress-bar");
@@ -167,12 +167,19 @@ function filterbychr(input, chosenTag, tags) {
 
 //fxn shows translated quote on result.html
 window.onload = function pg2Quote(YodaQuote) {
-  var mostRecent = localStorage.getItem("translatedQuote"); 
+  var mostRecent = localStorage.getItem("wisdom"); 
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
   quotePara.textContent = '"' + mostRecent + '"';
   quoteContainer.append(quotePara);
+    if (mostRecent == null) {
+      quotePara.textContent = '"A problem, there is. Again you must try, Padawan."'
+      var errMessEl = document.createElement("p");
+      quoteContainer.append(errMessEl);
+      errMessEl.setAttribute("id", "error-message");
+      errMessEl.textContent = "There's been a problem with the translator. Please try again.";
+    };
 };
 
 //first API function calls for quote and tags
@@ -185,8 +192,8 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-          localStorage.setItem("untranslatedQuote", input);
-          console.log(localStorage);
+            localStorage.setItem("untranslatedQuote", input);
+            console.log(localStorage);
           filterbychr(input, chosenTag, tags);
         });
       } else {
@@ -194,7 +201,7 @@ var quote = function (chosenTag) {
       }
     })
     .catch(function (error) {
-      alert("Unable to connect to API");
+      alert("Unable to connect to Random Quote API");
     });
 };
 

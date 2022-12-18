@@ -1,3 +1,11 @@
+:root {
+    /* Style definitions */
+    --text-color: rgb(233, 233, 233);
+
+    /* Animation Controls */
+    --opacity-0: 0;
+}
+
 @font-face {
     font-family: "Star Jedi";
     src: url("./Fonts/StarJedi.woff2") format("woff"), url("./Fonts/StarJediHollow.woff2") format("woff2");
@@ -7,27 +15,27 @@
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
+    0% {opacity: var(--opacity-0);}
     100% {opacity: 1;}
 }
 
 @-moz-keyframes fadeIn {
-    0% { opacity: 0; }
+    0% { opacity: var(--opacity-0); }
     100% { opacity: 1; }
 }
 
 @-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
+    0% { opacity: var(--opacity-0); }
     100% { opacity: 1; }
 }
 
 @-o-keyframes fadeIn {
-    0% { opacity: 0; }
+    0% { opacity: var(--opacity-0); }
     100% { opacity: 1; }
 }
 
 @-ms-keyframes fadeIn {
-    0% { opacity: 0; }
+    0% { opacity: var(--opacity-0); }
     100% { opacity: 1; }
 }
 
@@ -91,7 +99,7 @@ main {
 }
 
 .temp-filter {
-    color: rgb(233, 233, 233);
+    color: var(--text-color);
     font-size: 20px;
 }
 
@@ -176,10 +184,10 @@ strong {
     font-size: 120%;
     margin-top: -10px;
     background-color: rgba(128, 128, 128, 0.112);
-    color: rgb(233, 233, 233);
+    color: var(--text-color);
 }
 
 .filter-option:hover {
     box-shadow: 0px 0px 10px 3px lightblue;
-    color: rgb(233, 233, 233);
+    color: var(--text-color);
 }

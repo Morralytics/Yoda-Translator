@@ -8,7 +8,7 @@ The first page should appear as a background of Yoda in his home. In the top lef
 
 The quote page has a Star Wars-themed heading and subtitle in the upper left hand corner. The page's background image is of the Death Dtar being built. In the center of the page, the translated Yoda-speak quote will be appended. Below the quote, there is be a back button that will take the user back to the main page. 
 
-THIS SITE IS LIMITED TO 5 API CALLS AN HOUR. When the Yoda translator API has reached the limit, an error message will be displayed upon attempting to generate a quote but the user will still be taken to the second page and an untranslated quote will be appended to the page.
+THIS SITE IS LIMITED TO 5 API CALLS AN HOUR. When the Yoda translator API has reached the limit, an error message will be displayed upon attempting to generate a quote but the user will still be taken to the second page and the last translated quote will be appended to the page.
 
 ## Installation
 

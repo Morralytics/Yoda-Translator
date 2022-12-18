@@ -110,7 +110,7 @@ function getCommon(tagsL, chosenTag, input) {
   }
 }
 
-//Yoda API call after local tags are matched and a generated quote is grabbed in variabe 'input'
+//Yoda API call after local tags are matched and a generated quote is grabbed in variable 'input'
 //stores to local storage and generate quote on secound page while loading said page
 var yodaTranslate = function (input) {
   var yoda =
@@ -123,7 +123,7 @@ var yodaTranslate = function (input) {
           console.log(data);
           console.log(data.contents.translated);
           var YodaQuote = data.contents.translated;
-          localStorage.setItem("Yoda_Quote", YodaQuote);
+          localStorage.setItem("translatedQuote", YodaQuote);
           pg2Quote(YodaQuote);
         });
       } else {
@@ -166,8 +166,8 @@ function filterbychr(input, chosenTag, tags) {
 };
 
 //fxn shows translated quote on result.html
-window.onload = function pg2Quote() {
-  var mostRecent = localStorage.getItem("Yoda_Quote"); 
+window.onload = function pg2Quote(YodaQuote) {
+  var mostRecent = localStorage.getItem("translatedQuote"); 
   var quoteContainer = document.querySelector("#pg2-quote-container"); //select div to append empty <p>
   var quotePara = document.createElement("p"); //create empty <p> to hold quote
   quotePara.setAttribute("id", "pg2-quote"); //set <p> id to #pg2-quote for styling purposes
@@ -185,7 +185,7 @@ var quote = function (chosenTag) {
           console.log(data);
           var tags = data.tags;
           var input = data.content;
-          localStorage.setItem("original quote", input);
+          localStorage.setItem("untranslatedQuote", input);
           console.log(localStorage);
           filterbychr(input, chosenTag, tags);
         });

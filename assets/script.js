@@ -5,8 +5,8 @@ var generateBtn = document.querySelector(".submit-btn");
 var backBtn = document.querySelector(".back-btn");
 var tagOptions = document.querySelectorAll(".filter-option");
 var tempFilterTxt = document.querySelector(".temp-filter");
-var tagOpt = null;
-var sad = ["happiness", "cry", "loss", "death", "doing"];
+var tagOpt = null; //place holder to assign local tags
+var sad = ["happiness", "cry", "loss", "death", "doing"]; //local tags
 var life = ["living", "doinig", "use", "making"];
 var friendship = ["family", "love", "hostility", "other", "friend"];
 var love = [
@@ -19,11 +19,8 @@ var love = [
   "cute",
 ];
 var funny = ["life", "people", "man", "funny", "want", "thing"];
-var common = [];
-// Want to dynamically add filter boxes based on how many filters we decide to use
-// Dowm the road wishlist item
-var numOfFilter = 3;
-
+var common = []; //arrat of common tags to be filled later
+//API linking options
 const options = {
   method: "GET",
   headers: {
@@ -37,7 +34,7 @@ var DropFunction = function (event) {
 
   dropDownShow.classList.add("is-active");
 };
-
+//starts searching API after local theme is chose by user and generate button is clicked
 if (generateBtn != null) {
   generateBtn.addEventListener("click", function () {
     var chosenTag = tagOpt;
@@ -47,7 +44,7 @@ if (generateBtn != null) {
     displayProgressBar();
     quote(chosenTag);
 
-    setTimeout(function() {
+    setTimeout(function () {
       document.location.href = "./result.html";
     }, 5000);
   });
@@ -101,23 +98,19 @@ function getCommon(tagsL, chosenTag, input) {
       j++;
     }
   }
-  console.log(common.length);
+
+  //time out function to ensure API #1 is not overcalled
   if (common.length < 1) {
-    common.length = 0;
-    console.log(tagsL);
-    console.log(common.length);
     setTimeout(function () {
       quote(chosenTag);
     }, 1400);
   } else {
-    input = input.replace(/[^\w\s.&-]+/g, "");
-    console.log(input);
-    console.log(common);
-    yodaTranslate(input);
+    // yodaTranslate(input);
     console.log("yes I am three");
   }
 }
-
+//Yoda API call after local tags are matched and a generated quote is grabbed in variabe 'input'
+//stores to local storage and generate quote on secound page while loading said page
 var yodaTranslate = function (input) {
   var yoda =
     "https://api.funtranslations.com/translate/yoda.json?text=" + input + ".";
@@ -156,19 +149,17 @@ var displayBlaster = function () {
   var blaster = document.createElement("img");
   blaster.setAttribute("id", "blaster-rifle");
   blaster.setAttribute("src", "./assets/images/han-solo2.png");
-  
+
   barPlacement.appendChild(blaster);
 };
 
 var generateAdjustment = function () {
   generateBtn.textContent = "Yoda-fying!";
 };
-
+//filters out special character from quote and carries variables to be used later
 function filterbychr(input, chosenTag, tags) {
   input = input.replace(/[^\w\s.&-]+/g, "");
   var tagsL = tags.map((name) => name.toLowerCase());
-  console.log(input);
-  console.log(chosenTag);
   getCommon(tagsL, chosenTag, input);
 }
 
@@ -185,8 +176,8 @@ function filterbychr(input, chosenTag, tags) {
 // var testQuote = localStorage.getItem("wisdom");
 
 // window.onload = function sarahTest() {
-  // if ( (document.location.href = "/result.html") && (testQuote != null) ) { 
-    //only run fxn if on result.html and testQuote has content
+// if ( (document.location.href = "/result.html") && (testQuote != null) ) {
+//only run fxn if on result.html and testQuote has content
 
 //   if (testQuote != null) {
 //     quotePara.textContent = '"' + testQuote + '"';
@@ -215,25 +206,25 @@ window.onload = function pg2Quote(YodaQuote) {
   // var yodaPix = newArray("/assets/images/baby-yoda-pissed.jpg", "/assets/images/yoda-1.jpg", "/assets/images/yoda-2.jpg");
   // var randomNum = Math.floor(Math.random() * yodaPix.length);
   // imgEl.src = yodaPix[randomNum];
-}
+};
 
 // var yodaPic = document.getElementById("yoda-pic");
 // var yodaPix = ("./assets/images/yoda-1.jpg");
 // yodaPic.src = "./assets/images/yoda-2.jpg";
 
-  //code below is probably not necessary since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
+//code below is probably not necessary since API is consistently working, so there should always be a quote to show on result.html; however, we may still want to implement something like this in case something goes wrong -- without it, the page will probably display "null" as it is now
 
-    //only show text content if quote has been translated, else show 'try again' message
+//only show text content if quote has been translated, else show 'try again' message
 
-    //     if (mostRecent != null) {
-    //       quotePara.textContent = '"' + mostRecent + '"'; //set <p> text content to most recently translated quote
-    //       quoteContainer.append(quotePara); //append <p> to div
-    //       subtitle = "Yoda has spoken."; //add subtitle
-    //     } else {
-    //       quotePara.textContent = "Yoda doesn't seem to have anything to say right now. Click the Back button to try again."
-    //     }
-    // }
-
+//     if (mostRecent != null) {
+//       quotePara.textContent = '"' + mostRecent + '"'; //set <p> text content to most recently translated quote
+//       quoteContainer.append(quotePara); //append <p> to div
+//       subtitle = "Yoda has spoken."; //add subtitle
+//     } else {
+//       quotePara.textContent = "Yoda doesn't seem to have anything to say right now. Click the Back button to try again."
+//     }
+// }
+//first API function calls for quote and tags
 var quote = function (chosenTag) {
   fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
     .then(function (response) {
@@ -244,9 +235,8 @@ var quote = function (chosenTag) {
           var tags = data.tags;
           var input = data.content;
           localStorage.setItem("key", input);
-            console.log(localStorage);
+          console.log(localStorage);
           filterbychr(input, chosenTag, tags);
-
         });
       } else {
         alert("Error: " + response.statusText);

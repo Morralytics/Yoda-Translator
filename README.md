@@ -3,7 +3,7 @@ This website is meant to generate a random quote within a certain theme. It does
 THIS SITE IS LIMITED TO 5 API CALLS AN HOUR.    
 
 Here is a link to the git hub repo https://github.com/Volexity21/Project-1
-Here is an image of the live application 
+Here is several images of the live application 
 ![.](./assets/images/Screenshot%202022-12-16%20115124.png)
 ![.](./assets/images/Screenshot%202022-12-16%20115210.png)
 ![.](./assets/images/Screenshot%202022-12-16%20115155.png)

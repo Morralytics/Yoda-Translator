@@ -17,6 +17,7 @@ N/A
 ## Repo and Deployed Site Links
 
 Here is a link to the git hub repo: https://github.com/Volexity21/Yoda-Translator
+
 Here is the link to the deployed site: https://volexity21.github.io/Yoda-Translator/
 
 ## Screenshots

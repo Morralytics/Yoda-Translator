@@ -16,7 +16,7 @@ N/A
 
 ## Repo and Deployed Site Links
 
-Here is a link to the git hub repo: https://github.com/Volexity21/Yoda-Translator
+Here is a link to the git hub repo: https://github.com/Morralytics/Yoda-Translator
 
 Here is the link to the deployed site: https://volexity21.github.io/Yoda-Translator/
 
@@ -33,3 +33,5 @@ The team hopes to implement the following wishlist items in future updates:
 - Append random Yoda picture to second page underneath appended quote
 - Add sound effect (e.g. blaster, light saber) on button click of generate button
 - Add history button and additional local storage functionality to allow user to see history of recently translated quotes
+
+[Feel free to join me through past and future projects!](https://github.com/Morralytics)

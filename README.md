@@ -18,7 +18,7 @@ N/A
 
 Here is a link to the git hub repo: https://github.com/Morralytics/Yoda-Translator
 
-Here is the link to the deployed site: https://volexity21.github.io/Yoda-Translator/
+Here is the link to the deployed site: https://morralytics.github.io/Yoda-Translator/
 
 ## Screenshots
 Here are several images of the live application:
